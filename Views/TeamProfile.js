@@ -10,7 +10,7 @@ export default function TeamProfile({navigation}) {
   const {dispatch, state} = useContext(store);
 
   const goToPokemons = () => {
-    navigation.push('Pokemons');
+    navigation.push('Pokemon');
   };
 
   const handleOnOptionPressed = item => {

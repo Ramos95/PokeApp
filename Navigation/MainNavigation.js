@@ -42,7 +42,7 @@ export default function Navigation({user}) {
         }}
       />
       <PokemonStack.Screen
-        name="Pokemons"
+        name="Pokemon"
         component={PokemonSelectionView}
         options={{
           //headerStyle: {backgroundColor: '#0db39e'},

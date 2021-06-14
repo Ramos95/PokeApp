@@ -74,6 +74,9 @@ export default function PokemonSelectionView({navigation}) {
     }
     setUp();
   }, []);
+  useEffect(() => {
+    console.log(visible);
+  }, [visible]);
 
   const handleOnOptionPressed = async ({item: {url}}) => {
     setVisible(false);
@@ -83,19 +86,18 @@ export default function PokemonSelectionView({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.slots}>
-        <Text style={styles.texSlots}>
+        <Text style={styles.textSlots}>
           Avalible Slots: {6 - state.teams[state.currentTeam].team.length}{' '}
         </Text>
       </View>
-      {state.isLoading ? (
-        <LoadingIndicator />
-      ) : (
-        <PokemonList
-          data={state.currentPokemons}
-          onPress={handleOnpress}
-          currentTeam={state.teams[state.currentTeam].team}
-        />
-      )}
+
+      <LoadingIndicator visible={state.isLoading} />
+
+      <PokemonList
+        data={state.currentPokemons}
+        onPress={handleOnpress}
+        currentTeam={state.teams[state.currentTeam].team}
+      />
 
       <TouchableOpacity
         style={styles.regionButtom}
@@ -126,6 +128,7 @@ const styles = StyleSheet.create({
   },
   textSlots: {
     fontWeight: 'bold',
+    fontFamily: 'Quicksand-bold',
     color: '#0db39e',
   },
   regionButtom: {

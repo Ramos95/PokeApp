@@ -39,6 +39,8 @@ export default function PokemonList({data, onPress, isTeam, currentTeam = []}) {
       ? renderPokemonTeamCard(item, index)
       : renderPokemonCard(item, index);
 
+  const keyExtractor = item => item.id;
+
   const emptyComponent = () => (
     <View style={styles.emptyComponent}>
       <Image
@@ -69,9 +71,9 @@ export default function PokemonList({data, onPress, isTeam, currentTeam = []}) {
       contentContainerStyle={{
         padding: 5,
       }}
-      style={styles.pokemonList}
+      windowSize={10}
       renderItem={renderItem}
-      keyExtractor={item => item.id}
+      keyExtractor={keyExtractor}
       ListEmptyComponent={emptyComponent}
     />
   );

@@ -49,4 +49,4 @@ At the moment the app is still in prototype and the current issues are present
 - Navigation headers resize when screen is loaded
 - Need loading indicators to inform when action is being fetched
 - Even tho user can save their data to firestore, there is still no implementation to retreive it
-- App if only configurated for android devices 
+- App if only configured for android devices 

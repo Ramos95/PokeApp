@@ -20,6 +20,7 @@ export const getPokemonsByRegion = async regionUrl => {
     let pokemonUrls = entries.map(
       ({pokemon_species}) => `${BASEURL}pokemon/${pokemon_species.name}`,
     );
+    /*mapping the pokemon url as fetch elements to pass as parameter*/
     let response = await Promise.all(
       pokemonUrls.map(url =>
         fetch(url)
@@ -72,7 +73,6 @@ export const getPokemonDescription = async speciesUrl => {
     let descriptions = response.map(({flavor_text_entries}) => ({
       description: filterLanguageDescription(flavor_text_entries).flavor_text,
     }));
-    console.log(descriptions);
     return descriptions;
   } catch (error) {
     console.log(error);

@@ -24,6 +24,8 @@ const signUp = (email, password) => {
   auth()
     .createUserWithEmailAndPassword(email, password)
     .then(user => {
+      /*when user is created then also create a document with
+      his id where the user info will be stored*/
       console.log(user.user.uid);
       createUserDocument(user.user.uid);
       console.log('User account created & signed in!');

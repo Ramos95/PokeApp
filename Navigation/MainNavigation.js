@@ -23,7 +23,7 @@ export default function Navigation({user}) {
       title="Save"
       onPress={() =>
         state.teams.length > 0
-          ? updateCurrentTeam('CPe7wFG2QcRcglsqwHvzbr6uhtg2', state.teams)
+          ? updateCurrentTeam(state.currentUser['_user']['uid'], state.teams)
           : Alert.alert('Teams are empty')
       }
     />
@@ -36,7 +36,6 @@ export default function Navigation({user}) {
         component={Home}
         options={{
           headerRight: () => logOutButton(),
-          //headerStyle: {backgroundColor: '#0db39e'},
           headerTitleStyle: {color: '#0db39e', fontFamily: 'Quicksand-Bold'},
           headerTintColor: '#0db39e',
         }}
@@ -45,7 +44,6 @@ export default function Navigation({user}) {
         name="Pokemon"
         component={PokemonSelectionView}
         options={{
-          //headerStyle: {backgroundColor: '#0db39e'},
           headerTitleStyle: {color: '#0db39e', fontFamily: 'Quicksand-Bold'},
           headerTintColor: '#0db39e',
         }}

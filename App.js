@@ -11,15 +11,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import 'react-native-gesture-handler';
 import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
 import MainNavigation from './Navigation/MainNavigation';
 import AuthenticationStack from './Navigation/AuthenticationStack';
@@ -30,7 +21,6 @@ const App: () => Node = () => {
   const UserContext = React.createContext('user');
 
   function onAuthStateChanged(user) {
-    //console.log(user);
     setUser(user);
   }
 
@@ -47,24 +37,5 @@ const App: () => Node = () => {
     </StateProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

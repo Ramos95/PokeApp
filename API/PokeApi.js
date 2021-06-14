@@ -68,7 +68,7 @@ export const getPokemonDescription = async speciesUrl => {
       ),
     );
     let descriptions = response.map(({flavor_text_entries}) => ({
-      description: flavor_text_entries[0].flavor_text,
+      description: filterEnglishDescription(flavor_text_entries).flavor_text,
     }));
     console.log(descriptions);
     return descriptions;
@@ -76,3 +76,9 @@ export const getPokemonDescription = async speciesUrl => {
     console.log(error);
   }
 };
+
+//this can be adjusted to filter in other languages
+const filterEnglishDescription = descriptions =>
+  descriptions.find(
+    descriptions => descriptions.language.name.localeCompare('en') === 0,
+  );

@@ -57,3 +57,15 @@ export const bottomTabsIconSelector = (tab, isFocused) => {
       return require('./Assets/img/pokebola.png');
   }
 };
+
+export const filterFireStoreUpdateData = pkmTeams =>
+  pkmTeams.map(({name, team}) => ({
+    name,
+    team: team.map(({id, name}) => ({id, name})),
+  }));
+
+//this can be adjusted to filter in other languages
+export const filterLanguageDescription = (descriptions, lang = 'en') =>
+  descriptions.find(
+    descriptions => descriptions.language.name.localeCompare(lang) === 0,
+  );

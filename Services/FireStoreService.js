@@ -1,4 +1,5 @@
 import firestore from '@react-native-firebase/firestore';
+import {filterFireStoreUpdateData} from '../utils';
 
 export const createUserDocument = fireBaseUserID => {
   firestore()
@@ -9,10 +10,11 @@ export const createUserDocument = fireBaseUserID => {
 };
 
 export const updateCurrentTeam = (fireBaseUserID, userTeams) => {
+  console.log(filterFireStoreUpdateData(userTeams));
   firestore()
     .collection('Users')
     .doc(fireBaseUserID)
-    .update({teams: userTeams})
+    .update({teams: filterFireStoreUpdateData(userTeams)})
     .then(() => console.log('Team Updated!'));
 };
 

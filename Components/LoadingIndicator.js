@@ -1,8 +1,8 @@
 import React from 'react';
 import {useEffect, useState, useRef} from 'react';
-import {View, Animated, StyleSheet, Easing} from 'react-native';
+import {View, Animated, Modal, StyleSheet, Easing} from 'react-native';
 
-export default function LoadingIndicator() {
+export default function LoadingIndicator({visible}) {
   const [rotateValue, setRotateValue] = useState(new Animated.Value(0));
   const [fadeAnim, setFadeAnim] = useState(new Animated.Value(0));
 
@@ -45,16 +45,23 @@ export default function LoadingIndicator() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Animated.Image
-        style={{height: 100, width: 100, transform: [{rotate: rotateStyle}]}}
-        source={require('../Assets/img/Poké_Ball_icon.svg.png')}
-      />
-      <Animated.Text style={[styles.text, {opacity: fadeAnim}]}>
-        Cargando ... {'\n'}
-        Cargando
-      </Animated.Text>
-    </View>
+    <Modal visible={visible} transparent>
+      <View style={styles.container}>
+        <View style={styles.spinnerContainer}>
+          <Animated.Image
+            style={{
+              height: 100,
+              width: 100,
+              transform: [{rotate: rotateStyle}],
+            }}
+            source={require('../Assets/img/Poké_Ball_icon.svg.png')}
+          />
+          <Animated.Text style={[styles.text, {opacity: fadeAnim}]}>
+            Loading ... {'\n'}
+          </Animated.Text>
+        </View>
+      </View>
+    </Modal>
   );
 }
 
@@ -67,6 +74,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '100%',
     width: '100%',
+    backgroundColor: 'rgba(200,200,200,0.6)',
+  },
+  spinnerContainer: {
+    height: '50%',
+    width: '70%',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 10,
   },
   text: {
     fontFamily: 'Quicksand-Bold',

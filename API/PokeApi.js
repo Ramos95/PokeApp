@@ -1,3 +1,5 @@
+import {filterLanguageDescription} from '../utils';
+
 const headers = new Headers({'content-type': 'application/json'});
 const BASEURL = 'https://pokeapi.co/api/v2/';
 
@@ -68,7 +70,7 @@ export const getPokemonDescription = async speciesUrl => {
       ),
     );
     let descriptions = response.map(({flavor_text_entries}) => ({
-      description: filterEnglishDescription(flavor_text_entries).flavor_text,
+      description: filterLanguageDescription(flavor_text_entries).flavor_text,
     }));
     console.log(descriptions);
     return descriptions;
@@ -76,9 +78,3 @@ export const getPokemonDescription = async speciesUrl => {
     console.log(error);
   }
 };
-
-//this can be adjusted to filter in other languages
-const filterEnglishDescription = descriptions =>
-  descriptions.find(
-    descriptions => descriptions.language.name.localeCompare('en') === 0,
-  );

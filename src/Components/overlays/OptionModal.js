@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import ItemList from 'components/lists/ItemList';
-import {store} from 'context/Contex';
+import {store} from 'context/context';
 
 export default function OptionModal({
   data,

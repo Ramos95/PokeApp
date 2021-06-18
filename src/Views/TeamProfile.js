@@ -3,7 +3,7 @@ import {useState} from 'react';
 import {View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import {getPokemonDescription} from 'api/PokeApi';
 import PokemonList from 'components/lists/PokemonList';
-import {store} from 'context/Contex';
+import {store} from 'context/context';
 
 export default function TeamProfile({navigation}) {
   const [pkm, setPkm] = useState([]);

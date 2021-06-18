@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import ItemList from 'components/lists/ItemList';
-import {store} from 'context/Contex';
+import {store} from 'context/context';
 
 export default function Home({navigation}) {
   const [isLoading, setIsloading] = useState(true);

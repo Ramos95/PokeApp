@@ -15,7 +15,7 @@ import type {Node} from 'react';
 
 import MainNavigation from 'navigation/MainNavigation';
 import AuthenticationStack from 'navigation/AuthenticationStack';
-import {StateProvider} from 'context/Contex';
+import {StateProvider} from 'context/context';
 
 const App: () => Node = () => {
   const [initialState, setInitialState] = useState({});

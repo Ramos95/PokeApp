@@ -1,12 +1,12 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Home from '../Views/Home';
-import PokemonSelectionView from '../Views/PokemonSelectionView';
-import TeamProfile from '../Views/TeamProfile';
+import Home from 'views/Home';
+import PokemonSelectionView from 'views/PokemonSelectionView';
+import TeamProfile from 'views/TeamProfile';
 import {Alert, Button} from 'react-native';
-import {logOut} from '../Services/FirebaseService';
-import {updateCurrentTeam} from '../Services/FireStoreService';
-import {store} from '../Context/Contex';
+import {logOut} from 'services/FirebaseService';
+import {updateCurrentTeam} from 'services/FireStoreService';
+import {store} from 'context/Contex';
 import {useContext} from 'react';
 
 export default function Navigation({user}) {

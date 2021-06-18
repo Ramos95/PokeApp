@@ -2,8 +2,8 @@ import React from 'react';
 import {useEffect} from 'react';
 import {useState} from 'react';
 import {FlatList, View, Image, Text, StyleSheet} from 'react-native';
-import PokemonCard from '../cards/PokemonCard';
-import PokemonTeamCard from '../cards/PokemonTeamCard';
+import PokemonCard from 'components/cards/PokemonCard';
+import PokemonTeamCard from 'components/cards/PokemonTeamCard';
 
 export default function PokemonList({data, onPress, isTeam, currentTeam = []}) {
   const [selectedPokemon, setSelectedPokemon] = useState([]);

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {View, TouchableOpacity, Image, Text, StyleSheet} from 'react-native';
 import {pokemonTypeStyle} from '../../utils';
-import PokeCheckedIndicator from '../buttons/PokeCheckBox';
+import PokeCheckedIndicator from 'components/buttons/PokeCheckBox';
 import {Dimensions} from 'react-native';
 import {store} from '../../Context/Contex';
 

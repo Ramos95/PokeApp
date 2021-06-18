@@ -1,6 +1,6 @@
 import React from 'react';
-import LogIn from '../Views/SignInViews/LogIn';
-import NewUser from '../Views/SignInViews/NewUser';
+import LogIn from 'views/SignInViews/LogIn';
+import NewUser from 'views/SignInViews/NewUser';
 import {createStackNavigator} from '@react-navigation/stack';
 
 export default function AuthenticationStack() {

@@ -1,6 +1,4 @@
-import React from 'react';
-import {useEffect} from 'react';
-import {useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import {FlatList, View, Image, Text, StyleSheet} from 'react-native';
 import PokemonCard from '../cards/PokemonCard';
 import PokemonTeamCard from '../cards/PokemonTeamCard';
@@ -41,6 +39,11 @@ export default function PokemonList({data, onPress, isTeam, currentTeam = []}) {
 
   const keyExtractor = item => item.id;
 
+  const getItemLayout = useCallback(
+    (data, index) => ({length: 120, offset: 120 * index, index}),
+    [],
+  );
+
   const emptyComponent = () => (
     <View style={styles.emptyComponent}>
       <Image
@@ -72,6 +75,8 @@ export default function PokemonList({data, onPress, isTeam, currentTeam = []}) {
         padding: 5,
       }}
       windowSize={10}
+      maxToRenderPerBatch={5}
+      getItemLayout={getItemLayout}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
       ListEmptyComponent={emptyComponent}

@@ -12,9 +12,9 @@ import auth from '@react-native-firebase/auth';
 import 'react-native-gesture-handler';
 import type {Node} from 'react';
 
-import MainNavigation from './Navigation/MainNavigation';
-import AuthenticationStack from './Navigation/AuthenticationStack';
-import {StateProvider} from './Context/Contex';
+import MainNavigation from 'navigation/MainNavigation';
+import AuthenticationStack from 'navigation/AuthenticationStack';
+import {StateProvider} from 'context/Contex';
 
 const App: () => Node = () => {
   const [user, setUser] = useState();

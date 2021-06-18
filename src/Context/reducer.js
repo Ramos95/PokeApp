@@ -9,6 +9,11 @@ import {
   FETCHPOKEMONS,
 } from './actions';
 
+const addTeam = ({teams}, {payload}) => [...teams, payload];
+
+const removeTeam = ({teams}, {payload}) =>
+  teams.filter(team => team.name.localeCompare(payload));
+
 export const addPokemon = ({teams, currentTeam}, {payload}) => {
   let exists = teams[currentTeam].team.some(item => item.id === payload.id);
   if (!exists) {

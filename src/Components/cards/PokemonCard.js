@@ -3,7 +3,7 @@ import {View, TouchableOpacity, Image, Text, StyleSheet} from 'react-native';
 import {pokemonTypeStyle} from '../../utils';
 import PokeCheckedIndicator from 'components/buttons/PokeCheckBox';
 import {Dimensions} from 'react-native';
-import {store} from '../../Context/Contex';
+import {store} from '../../Context/context';
 
 const windowWidth = Dimensions.get('window').width;
 

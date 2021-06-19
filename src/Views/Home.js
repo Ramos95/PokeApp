@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import ItemList from 'components/lists/ItemList';
+import {ADDTEAM, REMOVETEAM, UPDATETEAM} from 'context/actions';
 import {store} from 'context/context';
 
 export default function Home({navigation}) {
@@ -27,20 +28,20 @@ export default function Home({navigation}) {
   ];
 
   const selectTeam = ({item, index}) => {
-    dispatch({type: 'updateCurrentTeam', payload: index});
+    dispatch({type: UPDATETEAM, payload: index});
     navigation.push('Team Profile');
   };
 
   const createTeam = () => {
     let currentLegnt = state.teams.length + 1;
     dispatch({
-      type: 'addTeam',
+      type: ADDTEAM,
       payload: {name: `TEAM ${currentLegnt}`, team: []},
     });
   };
 
   const removeTeam = name => {
-    dispatch({type: 'removeTeam', payload: name});
+    dispatch({type: REMOVETEAM, payload: name});
   };
 
   /* useEffect(() => {

@@ -12,6 +12,13 @@ import PokemonList from 'components/lists/PokemonList';
 import OptionModal from 'components/overlays/OptionModal';
 import LoadingIndicator from 'components/LoadingIndicator';
 import {getPokemonsByRegion, getRegions} from 'api/PokeApi';
+import {
+  FETCHPOKEMONS,
+  ADDPOKEMON,
+  REMOVEPOKEMON,
+  INITIALIZEREGIONS,
+  INITIALIZEPOKEMONS,
+} from 'context/actions';
 import {store} from 'context/context';
 
 export default function PokemonSelectionView({navigation}) {
@@ -34,12 +41,12 @@ export default function PokemonSelectionView({navigation}) {
     let totalPokemons = state.teams[state.currentTeam].team.length;
     if (selected && totalPokemons < 6) {
       dispatch({
-        type: 'addPokemon',
+        type: ADDPOKEMON,
         payload: item,
       });
     } else if (!selected && totalPokemons > 0) {
       dispatch({
-        type: 'removePokemon',
+        type: REMOVEPOKEMON,
         payload: item.id,
       });
     }
@@ -48,7 +55,7 @@ export default function PokemonSelectionView({navigation}) {
   const initialize = async () => {
     try {
       let response = await getRegions();
-      dispatch({type: 'initializeRegions', payload: response.results});
+      dispatch({type: INITIALIZEREGIONS, payload: response.results});
       await setInitializePokemons(response.results[0].url);
     } catch (err) {
       console.log(err);
@@ -57,10 +64,10 @@ export default function PokemonSelectionView({navigation}) {
 
   const setInitializePokemons = async regionUrl => {
     try {
-      dispatch({type: 'fetchingPokemons', payload: pokemon});
+      dispatch({type: FETCHPOKEMONS, payload: pokemon});
       let pokemon = await getPokemonsByRegion(regionUrl);
       console.log(pokemon.slice(0, 1)[0].name);
-      dispatch({type: 'initiaizePokemons', payload: pokemon});
+      dispatch({type: INITIALIZEPOKEMONS, payload: pokemon});
     } catch (err) {
       console.log(err);
     }

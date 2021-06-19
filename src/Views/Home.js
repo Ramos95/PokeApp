@@ -7,24 +7,24 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import ItemList from 'components/lists/ItemList';
-import {ADDTEAM, REMOVETEAM, UPDATETEAM} from 'context/actions';
-import {store} from 'context/context';
+import ItemList from 'Components/lists/ItemList';
+import {ADDTEAM, REMOVETEAM, UPDATETEAM} from 'Context/actions';
+import {store} from 'Context/context';
 
 export default function Home({navigation}) {
   const [isLoading, setIsloading] = useState(true);
   const {dispatch, state} = useContext(store);
 
   const data = [
-    {name: 'kanto', url: 'https://pokeapi.co/api/v2/region/1/'},
-    {name: 'johto', url: 'https://pokeapi.co/api/v2/region/2/'},
-    {name: 'hoenn', url: 'https://pokeapi.co/api/v2/region/3/'},
-    {name: 'sinnoh', url: 'https://pokeapi.co/api/v2/region/4/'},
-    {name: 'unova', url: 'https://pokeapi.co/api/v2/region/5/'},
-    {name: 'kalos', url: 'https://pokeapi.co/api/v2/region/6/'},
-    {name: 'alola', url: 'https://pokeapi.co/api/v2/region/7/'},
-    {name: 'galar', url: 'https://pokeapi.co/api/v2/region/8/'},
-    {name: 'see all', url: 'https://pokeapi.co/api/v2/region/8/'},
+    {name: 'kanto', url: 'https://pokeapi.co/API/v2/region/1/'},
+    {name: 'johto', url: 'https://pokeapi.co/API/v2/region/2/'},
+    {name: 'hoenn', url: 'https://pokeapi.co/API/v2/region/3/'},
+    {name: 'sinnoh', url: 'https://pokeapi.co/API/v2/region/4/'},
+    {name: 'unova', url: 'https://pokeapi.co/API/v2/region/5/'},
+    {name: 'kalos', url: 'https://pokeapi.co/API/v2/region/6/'},
+    {name: 'alola', url: 'https://pokeapi.co/API/v2/region/7/'},
+    {name: 'galar', url: 'https://pokeapi.co/API/v2/region/8/'},
+    {name: 'see all', url: 'https://pokeapi.co/API/v2/region/8/'},
   ];
 
   const selectTeam = ({item, index}) => {

@@ -1,36 +1,12 @@
 import React, {useContext, useState} from 'react';
 import {View, TouchableOpacity, Image, Text, StyleSheet} from 'react-native';
 import {pokemonTypeStyle} from '../../utils';
-import PokeCheckedIndicator from 'components/buttons/PokeCheckBox';
+import PokeCheckedIndicator from 'Components/buttons/PokeCheckBox';
 import {Dimensions} from 'react-native';
-import {store} from '../../Context/context';
 
 const windowWidth = Dimensions.get('window').width;
 
 export default function PokemonCard({pokemonData, onPress, isSelected, index}) {
-  /* const {state} = useContext(store);
-  const [selected, setSelected] = useState(false);
-
-  const isSelected = () => {
-    let team = state.teams[state.currentTeam].team;
-    return team.some(pokemon => pokemon.id === pokemonData.id);
-  };
-
-  useState(() => {
-    setSelected(isSelected());
-  }, [pokemonData]); */
-
-  /* const isSelected = currentPokemon => {
-    let team = state.teams[state.currentTeam];
-    return team.some(pokemon => pokemon.id === currentPokemon.id);
-  }; */
-
-  const handleOnPress = () => {
-    /* setSelected(!selected);
-    onPress(pokemonData, !selected); */
-    /* onPress(pokemonData, isSelected,index); */
-  };
-
   return (
     <TouchableOpacity
       activeOpacity={1}

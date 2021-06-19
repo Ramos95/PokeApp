@@ -31,7 +31,7 @@ export default function ItemList({
   const emptyComponent = () => (
     <View style={styles.emptyComponent}>
       <Image
-        source={require('../../Assets/img/pokebola-outline.png')}
+        source={require('Assets/img/pokebola-outline.png')}
         style={{height: 100, width: 100}}
       />
       <Text style={styles.emptyText}>No Teams Yet!</Text>

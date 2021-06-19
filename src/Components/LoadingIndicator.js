@@ -54,7 +54,7 @@ export default function LoadingIndicator({visible}) {
               width: 100,
               transform: [{rotate: rotateStyle}],
             }}
-            source={require('../Assets/img/Poké_Ball_icon.svg.png')}
+            source={require('Assets/img/Poké_Ball_icon.svg.png')}
           />
           <Animated.Text style={[styles.text, {opacity: fadeAnim}]}>
             Loading ... {'\n'}

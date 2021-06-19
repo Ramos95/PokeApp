@@ -6,7 +6,7 @@ import TeamProfile from 'views/TeamProfile';
 import {Alert, Button} from 'react-native';
 import {logOut} from 'services/FirebaseService';
 import {updateCurrentTeam} from 'services/FireStoreService';
-import {store} from 'context/Contex';
+import {store} from 'context/context';
 import {useContext} from 'react';
 
 export default function Navigation({user}) {

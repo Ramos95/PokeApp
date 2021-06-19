@@ -3,7 +3,8 @@ import {useState} from 'react';
 import {View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import {getPokemonDescription} from 'api/PokeApi';
 import PokemonList from 'components/lists/PokemonList';
-import {store} from 'context/Contex';
+import {REMOVEPOKEMON} from 'context/actions';
+import {store} from 'context/context';
 
 export default function TeamProfile({navigation}) {
   const [pkm, setPkm] = useState([]);
@@ -14,7 +15,7 @@ export default function TeamProfile({navigation}) {
   };
 
   const handleOnOptionPressed = item => {
-    dispatch({type: 'removePokemon', payload: item.id});
+    dispatch({type: REMOVEPOKEMON, payload: item.id});
   };
 
   const addDescription = descriptions => {

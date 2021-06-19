@@ -9,7 +9,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
-import createStore from 'Context/store';
 import 'react-native-gesture-handler';
 import type {Node} from 'react';
 
@@ -18,10 +17,10 @@ import AuthenticationStack from 'Navigation/AuthenticationStack';
 import {StateProvider} from 'Context/context';
 
 const App: () => Node = () => {
-  const [initialState, setInitialState] = useState({});
+  const [user, setUser] = useState(null);
 
   function onAuthStateChanged(user) {
-    setInitialState(createStore({currentUser: user['_user']}));
+    setUser(prevUser => (user ? user['_user'] : prevUser));
   }
 
   useEffect(() => {
@@ -30,13 +29,9 @@ const App: () => Node = () => {
   }, []);
 
   return (
-    <StateProvider initialState={initialState}>
+    <StateProvider user={user}>
       <NavigationContainer>
-        {initialState.currentUser ? (
-          <MainNavigation />
-        ) : (
-          <AuthenticationStack />
-        )}
+        {user ? <MainNavigation /> : <AuthenticationStack />}
       </NavigationContainer>
     </StateProvider>
   );

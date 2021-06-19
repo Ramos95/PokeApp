@@ -2,7 +2,7 @@ import React, {useEffect, useContext} from 'react';
 import {useState} from 'react';
 import {View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import {getPokemonDescription} from 'API/PokeApi';
-import PokemonList from 'Componentslists/PokemonList';
+import PokemonList from 'Components/lists/PokemonList';
 import {REMOVEPOKEMON} from 'Context/actions';
 import {store} from 'Context/context';
 

@@ -2,8 +2,8 @@ import React from 'react';
 import {useEffect} from 'react';
 import {useState} from 'react';
 import {FlatList, View, Image, Text, StyleSheet} from 'react-native';
-import PokemonCard from 'components/cards/PokemonCard';
-import PokemonTeamCard from 'components/cards/PokemonTeamCard';
+import PokemonCard from 'Components/cards/PokemonCard';
+import PokemonTeamCard from 'Components/cards/PokemonTeamCard';
 
 export default function PokemonList({data, onPress, isTeam, currentTeam = []}) {
   const [selectedPokemon, setSelectedPokemon] = useState([]);
@@ -44,7 +44,7 @@ export default function PokemonList({data, onPress, isTeam, currentTeam = []}) {
   const emptyComponent = () => (
     <View style={styles.emptyComponent}>
       <Image
-        source={require('../../Assets/img/pokebola-outline.png')}
+        source={require('Assets/img/pokebola-outline.png')}
         style={{height: 100, width: 100}}
       />
       <Text style={styles.emptyText}>No Pokemons Yet!</Text>

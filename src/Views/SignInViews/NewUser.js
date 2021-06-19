@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
   Keyboard,
 } from 'react-native';
-import {signUp} from 'services/FirebaseService';
+import {signUp} from 'Services/FirebaseService';
 
 /* import {signUp} from '../services/firabaseSigIn'; */
 

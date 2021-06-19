@@ -8,18 +8,18 @@ import {
   View,
   Alert,
 } from 'react-native';
-import PokemonList from 'components/lists/PokemonList';
-import OptionModal from 'components/overlays/OptionModal';
-import LoadingIndicator from 'components/LoadingIndicator';
-import {getPokemonsByRegion, getRegions} from 'api/PokeApi';
+import PokemonList from 'Components/lists/PokemonList';
+import OptionModal from 'Components/overlays/OptionModal';
+import LoadingIndicator from 'Components/LoadingIndicator';
+import {getPokemonsByRegion, getRegions} from 'API/PokeApi';
 import {
   FETCHPOKEMONS,
   ADDPOKEMON,
   REMOVEPOKEMON,
   INITIALIZEREGIONS,
   INITIALIZEPOKEMONS,
-} from 'context/actions';
-import {store} from 'context/context';
+} from 'Context/actions';
+import {store} from 'Context/context';
 
 export default function PokemonSelectionView({navigation}) {
   const [visible, setVisible] = useState(false);

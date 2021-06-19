@@ -10,7 +10,7 @@ import {
   Keyboard,
   KeyboardAvoidingView,
 } from 'react-native';
-import {signIn} from 'services/FirebaseService';
+import {signIn} from 'Services/FirebaseService';
 
 const LogIn = ({navigation}) => {
   const [email, setEmail] = useState('');

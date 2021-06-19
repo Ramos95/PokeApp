@@ -8,8 +8,8 @@ export default function PokeCheckedIndicator({selected}) {
         style={{height: 30, width: 30, borderColor: 'black'}}
         source={
           selected
-            ? require('../../Assets/img/pokebola.png')
-            : require('../../Assets/img/pokebola-outline.png')
+            ? require('Assets/img/pokebola.png')
+            : require('Assets/img/pokebola-outline.png')
         }
         resizeMode="contain"
       />

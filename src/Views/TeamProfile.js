@@ -1,10 +1,10 @@
 import React, {useEffect, useContext} from 'react';
 import {useState} from 'react';
 import {View, Image, TouchableOpacity, StyleSheet} from 'react-native';
-import {getPokemonDescription} from 'api/PokeApi';
-import PokemonList from 'components/lists/PokemonList';
-import {REMOVEPOKEMON} from 'context/actions';
-import {store} from 'context/context';
+import {getPokemonDescription} from 'API/PokeApi';
+import PokemonList from 'Componentslists/PokemonList';
+import {REMOVEPOKEMON} from 'Context/actions';
+import {store} from 'Context/context';
 
 export default function TeamProfile({navigation}) {
   const [pkm, setPkm] = useState([]);
@@ -48,7 +48,7 @@ export default function TeamProfile({navigation}) {
           activeOpacity={0.6}
           onPress={goToPokemons}>
           <Image
-            source={require('../Assets/img/pokemon-ir.png')}
+            source={require('Assets/img/pokemon-ir.png')}
             style={{height: 45, width: 45}}
           />
         </TouchableOpacity>
